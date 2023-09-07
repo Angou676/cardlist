@@ -1,14 +1,15 @@
 // tailwind.config.js
 module.exports = {
   theme: {
-   
     width: {
       'width45': '65px', // Define a custom width value
       'width158': '73%',
       'width100': '100px',
       'width60': '60%',
+      'width50': '50%',
       'width40': '40%',
-      'width80': '80%'
+      'width80': '80%',
+      'width90': '90%'
     },
     height: {
       'height45': '65px',
@@ -16,6 +17,9 @@ module.exports = {
     },
     lineHeight: {
       '44': '64px', // Add a custom line height class
+    },
+    marginTop:{
+      'mt30':'30px'
     },
     screens: {
       sm: '480px',
@@ -34,17 +38,7 @@ module.exports = {
       '30': '50px',
     },
   },
-  extend: {
-    colors: {
-      primary: '#FF5722',
-    },
-    fontFamily: {
-      custom: ['MyCustomFont', 'sans'],
-    },
-    width: {
-      'width40': '10px', // Define a custom width value
-    },
-  },
+
   purge: [
     './src/**/*.html',
     './src/**/*.js',

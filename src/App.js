@@ -1,14 +1,12 @@
-import CartList from "./components/CartList";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import Details from './components/Details'
+import Register from "./components/Register";
 
 function App() {
   return (
     <div >
       <Router>
         <Routes>
-          <Route path='/' exact element={<CartList/>} />
-          <Route path='/details' exact element={<Details/>} />
+          <Route path='/' exact element={<Register/>} />
         </Routes>
       </Router>
 
