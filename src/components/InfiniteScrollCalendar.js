@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 import InfiniteCalendar from 'react-infinite-calendar';
 import 'react-infinite-calendar/styles.css';
 
-const VerticalScrollCalendar = () => {
+const InfiniteScrollCalendar = () => {
   const customLocale = {
     headerFormat: 'MMM Do',
     weekdays: ['S', 'M', 'T', 'W', 'T', 'F', 'S'],
@@ -141,6 +141,6 @@ const VerticalScrollCalendar = () => {
   );
 };
 
-export default VerticalScrollCalendar;
+export default InfiniteScrollCalendar;
 
 

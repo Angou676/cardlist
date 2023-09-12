@@ -9,7 +9,8 @@ module.exports = {
       'width50': '50%',
       'width40': '40%',
       'width80': '80%',
-      'width90': '90%'
+      'width90': '90%',
+      'width100p': '100%'
     },
     height: {
       'height65': '65px',
@@ -19,11 +20,12 @@ module.exports = {
     lineHeight: {
       '44': '64px', // Add a custom line height class
     },
-    marginTop: {
-      'mt30': '30px',
-    },
-    margin:{
-      'margin300':'300px'
+
+    margin: {
+      'mauto':'auto',
+      'm10': '10px',
+      'ml2': '2px',
+      'm20':'20px'
     },
     screens: {
       sm: '480px',

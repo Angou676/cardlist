@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { createPopper } from '@popperjs/core';
 
-const PopperMenu = () => {
+const PopperMenu = ({ data, deleteEmployeeHandler }) => {
   const [isOpen, setIsOpen] = useState(false);
   const popperElement = useRef(null);
   const referenceElement = useRef(null);
@@ -67,7 +67,10 @@ const PopperMenu = () => {
             <div
               key={index}
               className="px-4 py-2 hover:bg-gray-100 cursor-pointer flex items-center"
-              onClick={() => handleOptionClick(option)}
+              onClick={() => {
+                handleOptionClick(option)
+                deleteEmployeeHandler(data.id)
+              }}
             >
               <i className={option.iconClass} aria-hidden="true"></i> &nbsp;<span> {option.label}</span>
             </div>

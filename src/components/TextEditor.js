@@ -2,11 +2,13 @@ import React, { useState } from 'react';
 import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css'; // Import Quill's CSS
 
-function TextEditor({onChangeHandler}) {
+function TextEditor({setDescription}) {
     const [editorHtml, setEditorHtml] = useState('');
+    console.log(editorHtml)
 
     const handleEditorChange = (content) => {
         setEditorHtml(content);
+        setDescription(content)
     };
 
     const modules = {

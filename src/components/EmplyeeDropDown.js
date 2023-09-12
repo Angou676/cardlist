@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
 import { faChevronUp } from '@fortawesome/free-solid-svg-icons'
 
-const Dropdown = () => {
+const EmplyeeDropDown = () => {
     const [isOpen, setIsOpen] = useState(false);
     const [selectedItems, setSelectedItems] = useState([]);
     const [selectedRadio, setSelectedRadio] = useState(null); // State to store selected radio
@@ -11,7 +11,7 @@ const Dropdown = () => {
     const items = ["tom", "jack", "mack", "will", "Bill"];
     const buttonRef = useRef(null);
 
-    const toggleDropdown = () => {
+    const toggleEmplyeeDropDown = () => {
         setIsOpen(!isOpen);
     };
 
@@ -34,13 +34,13 @@ const Dropdown = () => {
 
     return (
         <div className="relative inline-block text-left" style={{ marginLeft: '10px' }}>
-            <div style={{ width: '250px', }}>
+            <div style={{width:'250px',}}>
                 <button
                     ref={buttonRef}
-                    onClick={toggleDropdown}
+                    onClick={toggleEmplyeeDropDown}
                     type="button"
                     className="inline-flex justify-between px-4 py-2 text-sm font-medium text-gray-500  border border-gray-300 rounded-lg shadow-sm text-white focus:outline-none bg-black"
-                    id="dropdown-menu"
+                    id="EmplyeeDropDown-menu"
                     aria-haspopup="true"
                     aria-expanded="true"
                     style={{ width: '100%' }}
@@ -73,6 +73,44 @@ const Dropdown = () => {
                     </div>
 
                     <div className="p-4">
+                        <hr className='my-m10' />
+                        <label className='flex justify-between w-width100p'>
+                            <div className='flex items-center'>
+                                <div className="flex flex-row-reverse">
+                                    {arr.slice(0, 3).map((name, index) => (
+                                        <div className="avatar" key={index}>
+                                            <span className="avatar-letter">{name.charAt(0)}</span>
+                                        </div>
+                                    ))}
+                                </div>
+                                <span style={{ marginLeft: '15px' }}>
+                                    All employee
+                                </span>
+                            </div>
+                            <input
+                                type="checkbox"
+                                className="w-5 h-5 ml-2 text-blue-500 form-checkbox "
+                            />
+                        </label>
+                        <hr className='my-m10' />
+                        <label className="inline-flex items-center mt-ml2" style={{ display: 'flex', justifyContent: 'space-between' }}>
+                            <div className='flex items-center capitalize'>
+                                <img src='https://png.pngtree.com/png-vector/20220709/ourmid/pngtree-businessman-user-avatar-wearing-suit-with-red-tie-png-image_5809521.png'
+                                    className='mr-ml2 bg-white  rounded-full' style={{ height: '14px', width: '14px' }} />
+                                Mr Jack
+                            </div>
+
+                            <input
+                                type="radio"
+                                className="w-5 h-5 ml-2 text-blue-500 form-radio "
+                                value="Radio Button"
+                                checked={selectedRadio === 'Radio Button'}
+                                onChange={() => handleRadioChange('Radio Button')}
+                            />
+                        </label>
+                        <hr className='my-m10' />
+
+                        <div className='my-m10'>All practitioners</div>
                         {filteredItems.map((item) => (
                             <div
                                 key={item}
@@ -96,7 +134,15 @@ const Dropdown = () => {
                             </div>
                         ))}
 
-
+                        <hr className='my-m10' />
+                        <label className='flex justify-between w-width100p' style={{ marginTop: '20px' }} >
+                            All assistants
+                            <input
+                                type="checkbox"
+                                className="w-5 h-5 ml-2 text-blue-500 form-checkbox "
+                                checked={false}
+                            />
+                        </label>
                     </div>
 
                 </div>
@@ -133,4 +179,4 @@ const Dropdown = () => {
     );
 };
 
-export default Dropdown;
+export default EmplyeeDropDown;

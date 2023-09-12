@@ -2,10 +2,10 @@ import React from 'react';
 import 'font-awesome/css/font-awesome.min.css';
 import PopperMenu from './PopperMenu';
 
-const TableComponent = ({ headings, data }) => {
+const TableComponent = ({ headings, data, deleteEmployeeHandler }) => {
   return (
     <>
-      <div className="overflow-x-auto pt-6 pb-6" style={{ border: '1px solid #e5e7eb', borderRadius: '10px' }}>
+      <div className=" pt-6 pb-6" style={{ border: '1px solid #e5e7eb', borderRadius: '10px' }}>
         <table className="table-auto min-w-full  divide-gray-200">
           <thead>
             <tr>
@@ -21,14 +21,12 @@ const TableComponent = ({ headings, data }) => {
           </thead>
           <tbody>
             {data.map((val, idx) => {
-              console.log("val", val)
               return <tr key={idx}
                 style={{ borderTop: '1px solid #e5e7eb' }}
               >
                 <td
                   className="px-6 py-4 whitespace-no-wrap "
                 >
-
                   {
                     val.FirstName
                   }
@@ -66,16 +64,8 @@ const TableComponent = ({ headings, data }) => {
                 <td
                   className="px-6 py-4 whitespace-no-wrap "
                 >
-                  <PopperMenu />
+                  <PopperMenu data={val} deleteEmployeeHandler={deleteEmployeeHandler} />
                 </td>
-                {/* {row.map((cell, cellIndex) => (
-                <td
-                  key={cellIndex}
-                  className="px-6 py-4 whitespace-no-wrap "
-                >
-                  {cell}
-                </td>
-              ))} */}
               </tr>
             }
             )}
