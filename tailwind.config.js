@@ -12,14 +12,18 @@ module.exports = {
       'width90': '90%'
     },
     height: {
-      'height45': '65px',
+      'height65': '65px',
       'height20': '26px',
+      'height45': '45px'
     },
     lineHeight: {
       '44': '64px', // Add a custom line height class
     },
-    marginTop:{
-      'mt30':'30px'
+    marginTop: {
+      'mt30': '30px',
+    },
+    margin:{
+      'margin300':'300px'
     },
     screens: {
       sm: '480px',
